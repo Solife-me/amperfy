@@ -431,7 +431,7 @@ extension UIPickerView {
 }
 
 extension Notification.Name {
-  static let LibraryItemsChanged = Notification.Name("de.familie-zimba.Amperfy.LibraryItemsChanged")
+  static let LibraryItemsChanged = Notification.Name("com.amberfox.amperfy.libraryItemsChanged")
 }
 
 extension UIViewController {

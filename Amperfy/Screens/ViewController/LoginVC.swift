@@ -449,6 +449,7 @@ class LoginVC: UIViewController {
         self.appDelegate.storage.main.saveContext()
         self.appDelegate.storage.settings.accounts.login(credentials)
         meta.backendApi.provideCredentials(credentials: credentials)
+        WatchConnectivityManager.shared.pushCredentials(credentials)
 
         self.appDelegate.notificationHandler.post(name: .accountAdded, object: nil, userInfo: nil)
         self.appDelegate.notificationHandler.post(

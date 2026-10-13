@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   /// Task IDs need to be added to the array in Info.list under: <key>BGTaskSchedulerPermittedIdentifiers</key>
-  static let refreshTaskId = "de.familie-zimba.Amperfy.RefreshTask"
+  static let refreshTaskId = "com.amberfox.amperfy.refresh"
 
   static let maxPlayablesDownloadsToAddAtOnceWithoutWarning = 200
 
@@ -271,6 +271,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     configureBackgroundFetch()
     configureNotificationHandling()
     initEventLogger()
+
+    // Provision the Amperfy Watch app with the active account's credentials so the
+    // watch can stream/download directly when untethered.
+    WatchConnectivityManager.shared.activate()
+    if let active = storage.settings.accounts.active,
+       let credentials = storage.settings.accounts.getSetting(active).read.loginCredentials {
+      WatchConnectivityManager.shared.pushCredentials(credentials)
+    }
 
     guard let activeAccountInfo = appDelegate.storage.settings.accounts.active else {
       return true

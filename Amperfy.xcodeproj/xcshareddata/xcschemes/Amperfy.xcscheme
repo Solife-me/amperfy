@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Amperfy.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7A4000010000000000000001"
+               BuildableName = "Amperfy Watch.app"
+               BlueprintName = "Amperfy Watch"
+               ReferencedContainer = "container:Amperfy.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
